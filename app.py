@@ -6,7 +6,7 @@ import pandas as pd
 import os
 from datetime import datetime
 
-models_dir = "/Users/jahnavipb/Downloads/VISA DOCS-PARENTS/forecast_dashboard/model_data"
+models_dir = "model_data/"
 
 if not os.path.exists(models_dir):
     raise FileNotFoundError(f"Directory not found: {models_dir}")
