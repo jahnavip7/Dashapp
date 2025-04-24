@@ -121,8 +121,8 @@ def update_graph(selected_models, slider_range, view_type):
         if not slider_range or len(slider_range) < 2:
             return go.Figure()
 
-        start_date = date_list[slider_range[0]]
-        end_date = date_list[slider_range[1]]
+        start_date = date_list[int(slider_range[0])]
+        end_date = date_list[int(slider_range[1])]
 
         fig = go.Figure()
         ground_truth_plotted = False
@@ -147,7 +147,7 @@ def update_graph(selected_models, slider_range, view_type):
                 "predicted values" if "predicted values" in df_filtered.columns else None)
 
             if pred_col:
-                display_name = model.replace("2results_v14_", "").replace("results-csv_", "").replace("result-csv_", "")
+                display_name = model.replace("2results_v14_", "").replace("results-csv_", "").replace("result-csv_", "").replace(".csv", "")
                 all_values.extend(df_filtered[pred_col].dropna().tolist())
                 fig.add_trace(go.Scatter(
                     x=df_filtered["dates"],
