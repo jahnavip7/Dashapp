@@ -70,7 +70,7 @@ app.layout = html.Div([
             html.H3("Select Models:"),
             dcc.Checklist(
                 id="model-selection",
-                options=[{"label": model.replace("2results_v14_", "").replace("results-csv_", "").replace("result-csv_", ""),
+                options=[{"label": model.replace("2results_v14_", "").replace("results-csv_", "").replace("result-csv_", "").replace(".csv", ""),
                           "value": model} for model in model_files],
                 value=[],
                 inline=False,
